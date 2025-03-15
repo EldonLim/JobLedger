@@ -1,0 +1,86 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f4f9; /* Light background for contrast */
+    color: #333; /* Darker text for readability */
+}
+
+/* Popup container */
+.popup-container {
+    width: 320px;
+    background-color: #ffffff; /* White background for cleanliness */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 12px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.settings-icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.settings-icon:hover {
+    transform: rotate(90deg);
+}
+
+/* Button container */
+.button-container {
+    text-align: center;
+    margin: 16px 0;
+}
+
+.button {
+    background-color: #3498db; /* Vibrant blue for primary action */
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 6px 12px rgba(41, 128, 185, 0.4);
+    transform: translateY(-3px);
+}
+
+.button:active {
+    background-color: #2471a3;
+    box-shadow: 0 2px 4px rgba(36, 113, 163, 0.2);
+    transform: translateY(1px);
+}

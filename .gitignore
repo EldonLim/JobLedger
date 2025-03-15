@@ -1,0 +1,6 @@
+dist
+.env
+.venv
+node_modules
+dist.zip
+test.zip
