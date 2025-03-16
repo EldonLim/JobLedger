@@ -13,12 +13,11 @@ class database:
         except ValueError:
             # Use the path to the secret-mounted file
             # cred_path = "/secrets/serviceAccountKey.json"
-            service_account_key = os.environ.get('service_account_key')
-            if not service_account_key:
-                raise ValueError("SERVICE_ACCOUNT_KEY environment variable not found")
-            # cred_path = os.path.join(os.path.dirname(__file__), 'serviceAccountKey.json')
             try:
-                service_account_info = json.loads(service_account_key)
+                data = ""
+                with open(os.getenv('GOOGLE_APPLICATION_CREDENTIALS'), 'r') as file:
+                    data = file.read()
+                service_account_info = json.loads(data)
             except json.JSONDecodeError as e:
                 raise ValueError(f"Invalid SERVICE_ACCOUNT_KEY JSON format: {str(e)}")
             # Initialize the app

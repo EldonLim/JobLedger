@@ -34,7 +34,6 @@ class Server:
             'https://www.googleapis.com/auth/drive.metadata'
         ]
 
-        self.client = secretmanager.SecretManagerServiceClient()
         self.project_id = "jobledgerserverdeployment"
 
         # Get credentials and initialize services
@@ -44,11 +43,8 @@ class Server:
 
     def _get_credentials(self):
         # Retrieve credentials.json from Secret Manager
-        credentials_json_str = os.environ.get('jobledger-credentials')
-        credentials_json = json.loads(credentials_json_str)
-
-        credentials = service_account.Credentials.from_service_account_info(
-            credentials_json,
+        credentials = service_account.Credentials.from_service_account_file(
+            os.getenv('GOOGLE_APPLICATION_CREDENTIALS'),
             scopes=self.SCOPES
         )
 
